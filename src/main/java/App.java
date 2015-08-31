@@ -15,6 +15,7 @@ public class App {
 
       get("/", (request, response) -> {
         HashMap<String, Object> model = new HashMap<String, Object>();
+        model.put("tasksAll", Task.all());
         model.put("categories", Category.all());
         model.put("template", "templates/index.vtl");
         return new ModelAndView(model, layout);
